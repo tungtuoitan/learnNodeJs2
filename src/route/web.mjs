@@ -1,10 +1,12 @@
 import express from "express"
+import homecontroller from "../controller/homecontroller.js"
 const tungRouter = express.Router()
 
-tungRouter.get('/john', (req, res) => {
-    res.render('index', {
-        username: 'John'
-    })
-})
-console.log(express + '>>>>>>>>>>>>>>>>>>>>>>>>>')
-export default tungRouter
+
+function initWebRoute(app) {
+    tungRouter.get('/home', homecontroller.getHomePage)
+    return app.use('/router', tungRouter)
+}
+
+
+export default initWebRoute

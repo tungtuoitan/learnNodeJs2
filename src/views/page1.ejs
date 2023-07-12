@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello, <%= username %>!</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body>
+  <div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+  <h1>Hello, <%= username %>!</h1>
+  <button class="btn">Get Image</button>
+
+  <p>This is my data from the underground</p>
+  <table>
+    <thead>
+      <tr class="first-row">
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let i =0; i < data.length;i++){ %>
+      <tr>
+        <td><%= i %></td>
+        <td><%= data[i]["firstName"] %></td>
+        <td><%= data[i]["lastName"] %></td>
+        <td><%= data[i]["email"] %> </td>
+        <td><%= data[i]["address"] %></td>
+      </tr>
+      <% } %>
+
+    </tbody>
+
+
+  </table>
+  <div>
+    <p>Xem thông tin theo thứ tự: </p>
+
+    <div>
+      <input type="text" placeholder="Nhập ID" class="id-input">
+      <button class="xem-btn">Xem</button>
+
+    </div>
+    <table>
+      <thead>
+        <tr class="first-row">
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Address</th>
+        </tr>
+
+      </thead>
+      <tbody class="id-tbody">
+        <tr>
+          <td class="id-td"></td>
+          <td class="id-td"></td>
+          <td class="id-td"></td>
+          <td class="id-td"></td>
+          <td class="id-td"></td>
+          <td class="id-td"></td>
+        </tr>
+      </tbody>
+
+    </table>
+
+
+  </div>
+
+
+  <!-- <script type ='module' src="../connectDB.js"></script> -->
+  <script type="module" src="../js/javascript.js"></script>
+</body>
+
+</html>
