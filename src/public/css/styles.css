@@ -51,3 +51,12 @@ h1{
   .first-row:hover{
     background-color: gray;
   }
+
+  /* **************************************** */
+
+  #firstname,
+  #lastname,
+  #email,
+  #address{
+    display:block;
+  }

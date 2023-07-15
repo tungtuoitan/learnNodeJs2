@@ -1,32 +1,28 @@
 import mysql2 from 'mysql2'
+import mysql from 'mysql2/promise'
 
-// create the connection to database
-const connection = mysql2.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'nodejsbasic',
-});
+export const mainF = async function main() {
 
-// simple query
-// let connection.data
-connection.query(
-  'SELECT * FROM `user`',
-  function(err, rows, fields) {
-    if (err) throw err;
+  // create the connection
+  const connection = await mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    database: 'nodejsbasic'
+  });
+  // query database
+  const [rows, fields] = await connection.execute('SELECT * FROM `user`')
+  // console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' + rows)
+  return rows
+}
+export function thenF (rows) {
 
-    console.log('>>>>>>>> check msql')
-
-     // tạo array
-     const results = []
-     rows.forEach((item)=>{
-        const id = item.id
-        delete item.id
-        results[id-1]=  Object.assign({},item)
-     })
-     connection.data = results
-
-     
+    const results = []
+    rows.forEach((item) => {
+      const id = item.id
+      delete item.id
+      results[id - 1] = Object.assign({}, item)
+    })
+    return results
+  
   }
-
-);
-export default connection
+  

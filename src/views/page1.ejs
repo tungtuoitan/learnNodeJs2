@@ -17,6 +17,28 @@
   <h1>Hello, <%= username %>!</h1>
   <button class="btn">Get Image</button>
 
+  <form class="form" method="post" action="/router/add-info">
+    <label for="firstname" id="firstname-label">First Name:</label>
+    <input type="text" name="firstname" value="kkk" id="firstname" >
+
+    <label for="lastname" id="lastname-label">Last Name:</label>
+    <input type="text" name="lastname" value=""  id="lastname">
+
+    <label for="email" id="email-label">Email:</label>
+    <input type="email" name="email" value="" id="email">
+    
+    <label for="address" id="address-label">Address:</label>
+    <input type="text" name="address" value="" id="address">
+
+    <button id="submit" type="submit" >Submit</button>
+  </form>
+
+
+
+  
+
+ 
+
   <p>This is my data from the underground</p>
   <table>
     <thead>
@@ -43,7 +65,7 @@
 
 
   </table>
-  <div>
+  <!-- <div>
     <p>Xem thông tin theo thứ tự: </p>
 
     <div>
@@ -76,7 +98,7 @@
     </table>
 
 
-  </div>
+  </div> -->
 
 
   <!-- <script type ='module' src="../connectDB.js"></script> -->
